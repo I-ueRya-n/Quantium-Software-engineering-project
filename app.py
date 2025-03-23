@@ -1,3 +1,7 @@
+<<<<<<< HEAD:app.py
+=======
+import os
+>>>>>>> c436274 (Fixed warnings and cleaned up app.py):data/app.py
 import dash
 from dash import dcc, html
 import dash.dependencies as dd
@@ -11,7 +15,12 @@ server = app.server
 # -----------------------
 # Data Loading and Preprocessing
 # -----------------------
+<<<<<<< HEAD:app.py
 df = pd.read_csv("formatted_sales_data.csv")
+=======
+file_path = os.path.join(os.path.dirname(__file__), "formatted_sales_data.csv")
+df = pd.read_csv(file_path)
+>>>>>>> c436274 (Fixed warnings and cleaned up app.py):data/app.py
 # Remove the '$' symbol and convert sales to float
 df["sales"] = df["sales"].replace('[\$,]', '', regex=True).astype(float)
 df["date"] = pd.to_datetime(df["date"])
