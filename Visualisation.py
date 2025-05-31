@@ -11,7 +11,7 @@ data = data.sort_values(by = 'date')
 
 app = Dash()
 
-lineChart = px.scatter(data, x = 'date', y = 'sales', title = 'Pink morsel Sales')
+lineChart = px.line(data, x = 'date', y = 'sales', title = 'Pink morsel Sales')
 visualisation = dcc.Graph(
     id = 'Visualistion',
     figure = lineChart
